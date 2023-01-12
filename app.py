@@ -26,7 +26,11 @@ def img2text(img):
   # print(flattened_arr)
 
   y_pred = clf.predict([flattened_arr])
-  return str(y_pred[0])
+  if y_pred[0] == 0: 
+    return 'face'
+  else:
+    return 'non-face'
+
 
 
 import gradio as gr 
